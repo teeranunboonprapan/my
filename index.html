@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ประวัติอาคาร มหาวิทยาลัยราชภัฏศรีสะเกษ</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <!-- ===== ส่วนหัวของหน้าเว็บ (Header) ===== -->
+    <div class="header-wrapper" data-aos="fade-down">
+        <div class="header">
+            <div class="header-content-wrapper">
+                <div class="header-content">
+                    <h1><img src="logo.png" alt="SSKRU Logo" class="header-logo">SSKRU BUILDING</h1>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" onkeyup="searchBuildings()" placeholder="ค้นหาอาคาร...">
+            </div>
+        </div>
+        <p class="university-subtitle">มหาวิทยาลัยราชภัฏศรีสะเกษ</p>
+    </div>
+
+    <!-- ===== ส่วนแสดงรูปภาพ (เดิมเป็นแผนที่) ===== -->
+    <div class="map-container" data-aos="fade-up" data-aos-delay="100">
+        
+    </div>
+
+    <!-- ===== เนื้อหาหลักของหน้าเว็บ ===== -->
+    <div class="container">
+        <!-- ส่วนของปุ่มกรองประเภทอาคาร -->
+        <div class="filter-buttons" data-aos="fade-right" data-aos-delay="200">
+            <button class="filter-btn active" onclick="filterBuildings('all')">ทั้งหมด</button>
+            <button class="filter-btn" onclick="filterBuildings('academic')">อาคารเรียน</button>
+            <button class="filter-btn" onclick="filterBuildings('administration')">อาคารบริหาร</button>
+            <button class="filter-btn" onclick="filterBuildings('facility')">สิ่งอำนวยความสะดวก</button>
+        </div>
+
+        <!-- Grid สำหรับแสดงการ์ดข้อมูลอาคาร (จะถูกสร้างโดย JavaScript) -->
+        <div class="buildings-grid" id="buildingsGrid">
+            <!-- Building cards will be dynamically inserted here by script.js -->
+        </div>
+    </div>
+
+    <!-- ===== ส่วนท้ายของหน้าเว็บ (Footer) ===== -->
+    <div class="footer">
+        <p>&copy; 2024 SSKRU Buildings. All Rights Reserved.</p>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+    </script>
+</body>
+</html>
