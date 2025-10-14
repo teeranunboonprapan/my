@@ -85,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const imageUrl = convertDriveLink(building.image);
         const embedUrl = createEmbedUrl(building.location_url);
+        const searchUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(building.location)}`;
 
         mapContainer.innerHTML = `
             <div class="featured-card">
@@ -95,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="building-detail">
                             <p class="history-text">${building.history}</p>
                         </div>
-                        <p><strong>ที่ตั้ง:</strong> <a href="${building.location_url}" target="_blank" rel="noopener noreferrer">${building.location}</a></p>
+                        <p><strong>ที่ตั้ง:</strong> <a href="${searchUrl}" target="_blank" rel="noopener noreferrer">${building.location}</a></p>
                     </div>
                 </div>
                 ${embedUrl ? `
@@ -128,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             buildings.forEach((building, index) => {
                 const imageUrl = convertDriveLink(building.image);
+                const searchUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(building.location)}`;
                 const card = document.createElement('div');
                 card.className = 'building-card';
                 card.dataset.id = building.id;
@@ -147,8 +149,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <div class="building-detail">
                             <strong>ที่ตั้ง:</strong>
-                            <a href="${building.location_url}" rel="noopener noreferrer">${building.location}</a>
+                            <a href="${searchUrl}" target="_blank" rel="noopener noreferrer">${building.location}</a>
                         </div>
+                        <button class="detail-btn">ดูรายละเอียด</button>
                     </div>
                 `;
                 buildingsGrid.appendChild(card);
@@ -209,7 +212,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         <img src="${imageUrl}" alt="${building.name}" class="detail-image" data-aos="zoom-in">
                         <div class="detail-header-content" data-aos="fade-left" data-aos-delay="200">
                             <h1>${building.name} (${building.id})</h1>
-                            <p>${building.history}</p>
                             <div class="vision-mission-section">
                                 <div class="vision-mission-item">
                                     <strong>วิสัยทัศน์:</strong>
@@ -220,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <p class="mission-text">${building.mission || 'ไม่มีข้อมูล'}</p>
                                 </div>
                             </div>
-                            <p><strong>ที่ตั้ง:</strong> <a href="${building.location_url}" target="_blank" rel="noopener noreferrer">${building.location}</a></p>
+                            <p><strong>ที่ตั้ง:</strong> <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(building.location)}" target="_blank" rel="noopener noreferrer">${building.location}</a></p>
                         </div>
                     </div>
                     ${embedUrl ? `
@@ -348,35 +350,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Event Listener หลักสำหรับ Container ---
     mainContent.addEventListener('click', (e) => {
         const buildingCard = e.target.closest('.building-card');
-        
-        if (e.target.tagName === 'A' && e.target.closest('.building-detail')) {
-            e.preventDefault();
-            
-            if (buildingCard) {
-                const buildingId = buildingCard.dataset.id;
-                const building = allBuildings.find(b => b.id === buildingId);
-                
-                if (building && building.location_url && mapContainer) {
-                    const embedUrl = createEmbedUrl(building.location_url);
-                    if (embedUrl) {
-                        mapContainer.innerHTML = `
-                            <iframe 
-                                src="${embedUrl}" 
-                                width="100%" 
-                                height="100%" 
-                                style="border:0;" 
-                                allowfullscreen="" 
-                                loading="lazy" 
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>`;
-                        mapContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                }
-            }
-            return;
-        }
 
-        if (buildingCard) {
+        // Handle clicks on the building card (but not on links inside it) to go to the detail view
+        if (buildingCard && !e.target.closest('a')) {
             const buildingId = buildingCard.dataset.id;
             displayBuildingDetail(buildingId);
             setTimeout(() => AOS.refresh(), 100);
