@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ประวัติอาคาร มหาวิทยาลัยราชภัฏศรีสะเกษ</title>
+    <!-- ===== ส่วนของการตั้งค่าพื้นฐานของหน้าเว็บ (Meta Tags) ===== -->
+    <meta charset="UTF-8"> <!-- กำหนดชุดอักขระเป็น UTF-8 เพื่อรองรับภาษาไทย -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ตั้งค่าการแสดงผลให้เหมาะกับอุปกรณ์พกพา -->
+    <title>ประวัติอาคาร มหาวิทยาลัยราชภัฏศรีสะเกษ</title> <!-- ชื่อของหน้าเว็บที่จะแสดงบนแท็บของเบราว์เซอร์ -->
     
-    <link rel="stylesheet" href="style.css">
+    <!-- ===== ส่วนของการเชื่อมต่อไฟล์ CSS และฟอนต์ ===== -->
+    <link rel="stylesheet" href="style.css"> <!-- เชื่อมต่อไฟล์ CSS สำหรับการจัดสไตล์ -->
     
+    <!-- นำเข้าฟอนต์ Sarabun จาก Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
     
+    <!-- นำเข้าไลบรารี AOS (Animate On Scroll) สำหรับทำ Animation ตอนเลื่อนหน้า -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
@@ -29,9 +33,9 @@
         <p class="university-subtitle">มหาวิทยาลัยราชภัฏศรีสะเกษ</p>
     </div>
 
-    <!-- ===== ส่วนแสดงรูปภาพ (เดิมเป็นแผนที่) ===== -->
+    <!-- ===== ส่วนแสดงการ์ดแนะนำพิเศษ (Featured Card) ===== -->
     <div class="map-container" data-aos="fade-up" data-aos-delay="100">
-        
+        <!-- เนื้อหาส่วนนี้จะถูกสร้างโดย JavaScript (ฟังก์ชัน displayFeaturedCard) -->
     </div>
 
     <!-- ===== เนื้อหาหลักของหน้าเว็บ ===== -->
@@ -55,13 +59,16 @@
         <p>&copy; 2024 SSKRU Buildings. All Rights Reserved.</p>
     </div>
 
-    <script src="script.js"></script>
+    <!-- ===== ส่วนของการเชื่อมต่อไฟล์ JavaScript ===== -->
+    <script src="script.js"></script> <!-- เชื่อมต่อไฟล์ JavaScript หลักของเว็บ -->
 
+    <!-- นำเข้าและตั้งค่าไลบรารี AOS (Animate On Scroll) -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+      // เริ่มการทำงานของ AOS
       AOS.init({
-        duration: 800,
-        once: true,
+        duration: 800, // ระยะเวลาของ Animation (800ms)
+        once: true,      // ให้ Animation ทำงานแค่ครั้งเดียว
       });
     </script>
 </body>

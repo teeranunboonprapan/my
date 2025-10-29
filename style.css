@@ -9,32 +9,33 @@
 
 /* สไตล์หลักของ body */
 body {
-    font-family: 'Sarabun', Arial, sans-serif;
-    background: #faecc7; /* White background */
-    color: #5a4e3e; /* Soft brown text color */
-    line-height: 1.6;
+    font-family: 'Sarabun', Arial, sans-serif; /* กำหนดฟอนต์หลักของเว็บ */
+    background: #faecc7; /* สีพื้นหลังของหน้าเว็บ */
+    color: #5a4e3e; /* สีตัวอักษรหลัก */
+    line-height: 1.6; /* ระยะห่างระหว่างบรรทัด */
 }
 
 /* ===== ส่วนหัว (Header) ===== */
 
 /* สไตล์สำหรับกรอบครอบส่วนหัวทั้งหมด */
 .header-wrapper {
-    padding: 0.5rem 2rem; /* Reduced padding */
+    padding: 0.5rem 2rem; /* ระยะห่างภายในกรอบ */
 }
 
 /* จัดวางองค์ประกอบใน header (ชื่อเว็บ, ช่องค้นหา) */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* ใช้ Flexbox ในการจัดวาง */
+    justify-content: space-between; /* จัดให้อยู่คนละฝั่ง */
+    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
 }
 
+/* กรอบครอบเนื้อหาใน header */
 .header-content-wrapper {
-    background: linear-gradient(135deg, #ffd700 0%, #daa520 100%); /* Gold gradient */
-    color: #ffffff;
-    padding: 0.5rem 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(218, 165, 32, 0.3);
+    background: linear-gradient(135deg, #ffd700 0%, #daa520 100%); /* ไล่ระดับสีทอง */
+    color: #ffffff; /* สีตัวอักษร */
+    padding: 0.5rem 2rem; /* ระยะห่างภายใน */
+    border-radius: 10px; /* ทำให้ขอบมน */
+    box-shadow: 0 4px 20px rgba(218, 165, 32, 0.3); /* เพิ่มเงา */
 }
 
 .header-content {
@@ -43,495 +44,555 @@ body {
 
 /* สไตล์หัวข้อรอง (ชื่อมหาวิทยาลัย) */
 .university-subtitle {
-    display: none; /* Hide the subtitle */
+    display: none; /* ซ่อนหัวข้อรองนี้ไว้ */
 }
 
 /* สไตล์หัวข้อหลัก (H1) */
 .header h1 {
-    font-size: 1.8rem;
-    margin: 0;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
+    font-size: 1.8rem; /* ขนาดตัวอักษร */
+    margin: 0; /* ไม่มีระยะห่างภายนอก */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* เพิ่มเงาให้ตัวอักษร */
+    display: flex; /* ใช้ Flexbox */
+    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
 }
 
 /* สไตล์โลโก้ใน header */
 .header-logo {
-    height: 2.2rem;
-    margin-right: 0.75rem;
+    height: 2.2rem; /* ความสูงของโลโก้ */
+    margin-right: 0.75rem; /* ระยะห่างด้านขวา */
 }
 
 
 /* สไตล์ช่องค้นหา */
 .search-container input {
-    padding: 0.8rem;
-    border-radius: 25px;
-    border: 1px solid #daa520;
-    font-size: 1rem;
-    width: 300px;
-    background-color: #ffffff;
-    color: #333;
+    padding: 0.8rem; /* ระยะห่างภายใน */
+    border-radius: 25px; /* ทำให้ขอบมน */
+    border: 1px solid #daa520; /* เส้นขอบสีทอง */
+    font-size: 1rem; /* ขนาดตัวอักษร */
+    width: 300px; /* ความกว้าง */
+    background-color: #ffffff; /* สีพื้นหลัง */
+    color: #333; /* สีตัวอักษร */
 }
 
+/* สไตล์ตัวอักษร placeholder ในช่องค้นหา */
 .search-container input::placeholder {
-    color: #aaa; /* Adjusted for white background */
+    color: #aaa; /* สีเทาอ่อน */
 }
 
-/* ===== ส่วนรูปภาพ (Map Replacement) ===== */
+/* ===== ส่วนแสดงการ์ดแนะนำพิเศษ (Featured Card) ===== */
 
+/* กรอบครอบการ์ดแนะนำ */
 .map-container {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 2rem; /* ระยะห่างด้านบน */
+    margin-bottom: 2rem; /* ระยะห่างด้านล่าง */
 }
 
-/* สไตล์รูปภาพที่มาแทนที่แผนที่ */
+/* ซ่อนรูปภาพ PIG.jpg ที่ไม่ได้ใช้งานแล้ว */
 img[src="PIG.jpg"] {
-    display: none !important; /* Ensure the placeholder image is always hidden */
+    display: none !important; /* ใช้ !important เพื่อให้แน่ใจว่าถูกซ่อนเสมอ */
 }
 
-/* ===== สไตล์การ์ดแนะนำพิเศษ (Featured Card) ===== */
+/* สไตล์ของการ์ดแนะนำพิเศษ */
 .featured-card {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    padding: 2rem;
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto; /* จัดกลาง */
+    background: white; /* สีพื้นหลัง */
+    border-radius: 15px; /* ขอบมน */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* เงา */
+    padding: 2rem; /* ระยะห่างภายใน */
+    display: flex; /* ใช้ Flexbox */
+    gap: 2rem; /* ระยะห่างระหว่าง item */
+    align-items: flex-start; /* จัดชิดบน */
+    max-width: 1200px; /* ความกว้างสูงสุด */
+    margin: 0 auto; /* จัดให้อยู่กึ่งกลาง */
 }
 
+/* กรอบครอบเนื้อหาและรูปภาพในการ์ดแนะนำ */
 .card-content-wrapper {
-    display: flex;
-    gap: 2rem;
-    flex: 2;
+    display: flex; /* ใช้ Flexbox */
+    gap: 2rem; /* ระยะห่าง */
+    flex: 2; /* กำหนดสัดส่วนความกว้าง */
 }
 
+/* รูปภาพในการ์ดแนะนำ */
 .card-image {
-    width: 250px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    flex-shrink: 0;
+    width: 250px; /* ความกว้าง */
+    height: 180px; /* ความสูง */
+    object-fit: cover; /* ให้รูปภาพเต็มพื้นที่โดยไม่เสียสัดส่วน */
+    border-radius: 10px; /* ขอบมน */
+    flex-shrink: 0; /* ไม่ให้รูปภาพหดตัว */
 }
 
+/* ส่วนรายละเอียดในการ์ดแนะนำ */
 .card-details {
-    display: flex;
-    flex-direction: column;
+    display: flex; /* ใช้ Flexbox */
+    flex-direction: column; /* จัดเรียงแนวตั้ง */
 }
 
+/* หัวข้อหลัก (H1) ในการ์ดแนะนำ */
 .card-details h1 {
-    color: #daa520;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+    color: #daa520; /* สีทอง */
+    font-size: 1.8rem; /* ขนาดตัวอักษร */
+    margin-bottom: 1rem; /* ระยะห่างด้านล่าง */
 }
 
+/* ย่อหน้า (p) ในการ์ดแนะนำ */
 .card-details p {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; /* ระยะห่างด้านล่าง */
 }
 
+/* กรอบครอบแผนที่ในการ์ดแนะนำ */
 .card-map-container {
-    flex: 1;
-    height: 250px;
-    border-radius: 10px;
-    overflow: hidden;
+    flex: 1; /* กำหนดสัดส่วนความกว้าง */
+    height: 250px; /* ความสูง */
+    border-radius: 10px; /* ขอบมน */
+    overflow: hidden; /* ซ่อนส่วนที่เกินขอบ */
 }
 
 /* ===== ส่วนเนื้อหาหลัก (Main Content) ===== */
 
 /* กรอบครอบเนื้อหาหลัก */
 .container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    background: white;
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    max-width: 1200px; /* ความกว้างสูงสุด */
+    margin: 2rem auto; /* ระยะห่างภายนอก และจัดกลาง */
+    padding: 2rem; /* ระยะห่างภายใน */
+    background: white; /* สีพื้นหลัง */
+    border-radius: 15px; /* ขอบมน */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* เงา */
 }
 
 /* สไตล์ปุ่มกรอง */
 .filter-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
+    display: flex; /* ใช้ Flexbox */
+    justify-content: center; /* จัดกลาง */
+    gap: 1rem; /* ระยะห่างระหว่างปุ่ม */
+    margin-bottom: 2rem; /* ระยะห่างด้านล่าง */
+    flex-wrap: wrap; /* ให้ปุ่มขึ้นบรรทัดใหม่เมื่อไม่พอ */
 }
 
+/* สไตล์ของปุ่มกรองแต่ละปุ่ม */
 .filter-btn {
-    padding: 0.8rem 1.5rem;
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1rem;
-    color: #3b3b3b;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(37, 37, 37, 0.05);
+    padding: 0.8rem 1.5rem; /* ระยะห่างภายใน */
+    background: #fff; /* สีพื้นหลัง */
+    border: 1px solid #eee; /* เส้นขอบ */
+    border-radius: 25px; /* ขอบมน */
+    cursor: pointer; /* เปลี่ยน cursor เป็นรูปมือ */
+    font-size: 1rem; /* ขนาดตัวอักษร */
+    color: #3b3b3b; /* สีตัวอักษร */
+    transition: all 0.3s ease; /* Animation เวลาเปลี่ยนสถานะ */
+    box-shadow: 0 4px 15px rgba(37, 37, 37, 0.05); /* เงา */
 }
 
+/* สไตล์เมื่อนำเมาส์ไปวางบนปุ่มกรอง */
 .filter-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    background: #daa520;
-    color: white;
+    transform: translateY(-2px); /* เลื่อนปุ่มขึ้นเล็กน้อย */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1); /* เพิ่มเงา */
+    background: #daa520; /* เปลี่ยนสีพื้นหลัง */
+    color: white; /* เปลี่ยนสีตัวอักษร */
 }
 
+/* สไตล์ของปุ่มกรองที่กำลังถูกเลือก (active) */
 .filter-btn.active {
-    background: linear-gradient(135deg, #ffd700 0%, #daa520 100%);
-    color: white;
-    border: 1px solid #daa520;
+    background: linear-gradient(135deg, #ffd700 0%, #daa520 100%); /* ไล่ระดับสีทอง */
+    color: white; /* สีตัวอักษร */
+    border: 1px solid #daa520; /* เส้นขอบ */
 }
 
 /* ===== ส่วนแสดงผลการ์ดอาคาร ===== */
 
 /* Grid สำหรับจัดวางการ์ด */
 .buildings-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Reduced min card width */
-    gap: 1.5rem; /* Reduced gap */
-    margin-bottom: 3rem;
+    display: grid; /* ใช้ CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* กำหนดจำนวนคอลัมน์แบบยืดหยุ่น */
+    gap: 1.5rem; /* ระยะห่างระหว่างการ์ด */
+    margin-bottom: 3rem; /* ระยะห่างด้านล่าง */
+    align-items: start; /* จัดการ์ดชิดบน */
 }
 
 /* สไตล์ของการ์ดแต่ละใบ */
 .building-card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    background: white; /* สีพื้นหลัง */
+    border-radius: 15px; /* ขอบมน */
+    overflow: hidden; /* ซ่อนส่วนที่เกินขอบ */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* เงา */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation */
+    cursor: pointer; /* เปลี่ยน cursor */
 }
 
+/* รูปภาพบนการ์ด */
 .building-image {
-    width: 100%;
-    height: 160px; /* Reduced image height */
-    object-fit: cover;
-    background: linear-gradient(135deg, #ffd700 0%, #daa520 100%);
+    width: 100%; /* ความกว้างเต็ม */
+    height: 200px; /* ความสูง */
+    object-fit: cover; /* ให้รูปภาพเต็มพื้นที่ */
+    background: linear-gradient(135deg, #ffd700 0%, #daa520 100%); /* สีพื้นหลังสำรอง */
 }
 
+/* สไตล์เมื่อนำเมาส์ไปวางบนการ์ด */
 .building-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transform: translateY(-15px) scale(1.03); /* เลื่อนขึ้นและขยายเล็กน้อย */
+    box-shadow: 0 20px 45px rgba(0,0,0,0.2); /* เพิ่มเงา */
 }
 
+/* ส่วนหัวของการ์ด */
 .building-header {
-    background: linear-gradient(135deg, #ffd700 0%, #daa520 100%);
-    color: white;
-    padding: 1rem; /* Reduced padding */
-    text-align: center;
+    background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%); /* ไล่ระดับสีขาว */
+    color: #daa520; /* สีตัวอักษร */
+    padding: 1rem; /* ระยะห่างภายใน */
+    text-align: center; /* จัดกลาง */
 }
 
+/* หมายเลขอาคาร */
 .building-number {
-    font-size: 2rem; /* Reduced font size */
-    font-weight: bold;
-    margin-bottom: 0.25rem;
+    font-size: 2rem; /* ขนาดตัวอักษร */
+    font-weight: bold; /* ตัวหนา */
+    margin-bottom: 0.25rem; /* ระยะห่างด้านล่าง */
 }
 
+/* ชื่ออาคาร */
 .building-name {
-    font-size: 1.1rem; /* Reduced font size */
-    font-weight: bold;
+    font-size: 1.1rem; /* ขนาดตัวอักษร */
+    font-weight: bold; /* ตัวหนา */
 }
 
+/* เนื้อหาของการ์ด */
 .building-content {
-    padding: 1rem; /* Reduced padding */
+    padding: 1rem; /* ระยะห่างภายใน */
 }
 
+/* ส่วนรายละเอียดย่อยในการ์ด */
 .building-detail {
-    margin-bottom: 1rem;
-    padding: 0.8rem;
-    background: #ffffff;
-    border-radius: 8px;
-    border: 1px solid #f0f0f0;
+    margin-bottom: 1rem; /* ระยะห่างด้านล่าง */
+    padding: 0.8rem; /* ระยะห่างภายใน */
+    background: #ffffff; /* สีพื้นหลัง */
+    border-radius: 8px; /* ขอบมน */
+    border: 1px solid #f0f0f0; /* เส้นขอบ */
 }
 
+/* ตัวอักษรหนาในรายละเอียด */
 .building-detail strong {
-    color: #daa520;
-    display: block;
-    margin-bottom: 0.3rem;
+    color: #daa520; /* สีทอง */
+    display: block; /* ให้ขึ้นบรรทัดใหม่ */
+    margin-bottom: 0.3rem; /* ระยะห่างด้านล่าง */
 }
 
+/* สไตล์ข้อความประวัติ (จำกัดให้แสดง 2 บรรทัด) */
 .history-text {
-    overflow: hidden;
-    text-overflow: ellipsis;
+    overflow: hidden; /* ซ่อนส่วนที่เกิน */
+    text-overflow: ellipsis; /* แสดง ... เมื่อข้อความยาวเกิน */
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-line-clamp: 2; /* จำกัดจำนวนบรรทัด */
     -webkit-box-orient: vertical;
 }
 
+/* สไตล์เมื่อขยายข้อความประวัติ */
 .building-detail.expanded .history-text {
-    -webkit-line-clamp: unset; /* Show all lines when expanded */
-    max-height: none;
+    -webkit-line-clamp: unset; /* ไม่จำกัดจำนวนบรรทัด */
+    max-height: none; /* ไม่จำกัดความสูง */
 }
 
+/* ปุ่ม "อ่านเพิ่มเติม" */
 .read-more-btn {
-    background: none;
-    border: none;
-    color: #daa520;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 0.25rem 0;
-    margin-top: 0.5rem;
-    display: inline-block;
+    background: none; /* ไม่มีสีพื้นหลัง */
+    border: none; /* ไม่มีเส้นขอบ */
+    color: #daa520; /* สีทอง */
+    font-weight: bold; /* ตัวหนา */
+    cursor: pointer; /* เปลี่ยน cursor */
+    padding: 0.25rem 0; /* ระยะห่างภายใน */
+    margin-top: 0.5rem; /* ระยะห่างด้านบน */
+    display: inline-block; /* แสดงผลแบบ inline แต่กำหนดขนาดได้ */
 }
 
+/* สไตล์เมื่อนำเมาส์ไปวางบนปุ่ม "อ่านเพิ่มเติม" */
 .read-more-btn:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* ขีดเส้นใต้ */
 }
 
+/* ปุ่ม "ดูรายละเอียด" */
 .detail-btn {
-    display: block;
-    width: 100%;
-    padding: 0.8rem;
-    margin-top: 1rem;
-    background: linear-gradient(135deg, #ffd700 0%, #daa520 100%);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.2);
+    display: block; /* แสดงเต็มความกว้าง */
+    width: 100%; /* ความกว้างเต็ม */
+    padding: 0.8rem; /* ระยะห่างภายใน */
+    margin-top: 1rem; /* ระยะห่างด้านบน */
+    background: #daa520; /* สีพื้นหลัง */
+    color: white; /* สีตัวอักษร */
+    border: none; /* ไม่มีเส้นขอบ */
+    border-radius: 8px; /* ขอบมน */
+    cursor: pointer; /* เปลี่ยน cursor */
+    font-size: 1rem; /* ขนาดตัวอักษร */
+    font-weight: bold; /* ตัวหนา */
+    text-align: center; /* จัดกลาง */
+    transition: all 0.3s ease; /* Animation */
+    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.2); /* เงา */
 }
 
+/* สไตล์เมื่อนำเมาส์ไปวางบนปุ่ม "ดูรายละเอียด" */
 .detail-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4);
+    transform: translateY(-2px); /* เลื่อนขึ้น */
+    box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4); /* เพิ่มเงา */
 }
 
 
 /* ===== ส่วนแสดงผลหน้ารายละเอียด (Detail View) ===== */
 
+/* Animation สำหรับหน้ารายละเอียด */
 .detail-view {
     animation: fadeIn 0.5s ease;
 }
 
 /* สไตล์ปุ่มย้อนกลับ */
 .back-btn {
-    padding: 0.8rem 1.5rem;
-    background: linear-gradient(135deg, #ffd700 0%, #daa520 100%);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
-    margin-bottom: 2rem;
+    padding: 0.8rem 1.5rem; /* ระยะห่างภายใน */
+    background: linear-gradient(135deg, #ffd700 0%, #daa520 100%); /* ไล่ระดับสีทอง */
+    color: white; /* สีตัวอักษร */
+    border: none; /* ไม่มีเส้นขอบ */
+    border-radius: 25px; /* ขอบมน */
+    cursor: pointer; /* เปลี่ยน cursor */
+    font-size: 1rem; /* ขนาดตัวอักษร */
+    transition: all 0.3s ease; /* Animation */
+    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3); /* เงา */
+    margin-bottom: 2rem; /* ระยะห่างด้านล่าง */
 }
 
+/* สไตล์เมื่อนำเมาส์ไปวางบนปุ่มย้อนกลับ */
 .back-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    transform: translateY(-2px); /* เลื่อนขึ้น */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3); /* เพิ่มเงา */
 }
 
 /* การ์ด header ในหน้ารายละเอียด */
 .detail-header-card {
-    display: flex;
-    gap: 2rem;
-    background: white;
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    margin-bottom: 2rem;
-    align-items: flex-start; /* Align items to the top */
+    display: flex; /* ใช้ Flexbox */
+    gap: 2rem; /* ระยะห่าง */
+    background: white; /* สีพื้นหลัง */
+    border-radius: 15px; /* ขอบมน */
+    padding: 2rem; /* ระยะห่างภายใน */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* เงา */
+    margin-bottom: 2rem; /* ระยะห่างด้านล่าง */
+    align-items: flex-start; /* จัดชิดบน */
 }
 
+/* ส่วนเนื้อหาหลักใน header ของหน้ารายละเอียด */
 .detail-header-main {
-    flex: 1;
-    display: flex;
-    gap: 2rem;
-    align-items: center;
+    flex: 1; /* กำหนดสัดส่วน */
+    display: flex; /* ใช้ Flexbox */
+    gap: 2rem; /* ระยะห่าง */
+    align-items: center; /* จัดกึ่งกลางแนวตั้ง */
 }
 
+/* กรอบครอบแผนที่ในหน้ารายละเอียด */
 .detail-map-container {
-    flex: 0 0 300px; /* Fixed width for the map */
-    height: 250px; /* Fixed height for the map */
-    border-radius: 10px;
-    overflow: hidden;
+    flex: 0 0 300px; /* กำหนดความกว้างคงที่ */
+    height: 250px; /* กำหนดความสูงคงที่ */
+    border-radius: 10px; /* ขอบมน */
+    overflow: hidden; /* ซ่อนส่วนที่เกิน */
 }
 
+/* รูปภาพในหน้ารายละเอียด */
 .detail-image {
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
+    width: 300px; /* ความกว้าง */
+    height: 200px; /* ความสูง */
+    object-fit: cover; /* ให้รูปภาพเต็มพื้นที่ */
+    border-radius: 10px; /* ขอบมน */
 }
 
+/* หัวข้อหลัก (H1) ในหน้ารายละเอียด */
 .detail-header-content h1 {
-    color: #daa520;
-    margin-bottom: 1rem;
+    color: #daa520; /* สีทอง */
+    margin-bottom: 1rem; /* ระยะห่างด้านล่าง */
 }
 
+/* ส่วนของวิสัยทัศน์และพันธกิจ */
 .vision-mission-section {
-    margin: 1.5rem 0;
-    padding: 1rem;
-    background: #fdfaf2;
-    border-left: 4px solid #ffd700;
-    border-radius: 8px;
+    margin: 1.5rem 0; /* ระยะห่างภายนอก */
+    padding: 1rem; /* ระยะห่างภายใน */
+    background: #fdfaf2; /* สีพื้นหลัง */
+    border-left: 4px solid #ffd700; /* เส้นขอบด้านซ้าย */
+    border-radius: 8px; /* ขอบมน */
 }
 
+/* แต่ละรายการในส่วนวิสัยทัศน์/พันธกิจ */
 .vision-mission-item {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; /* ระยะห่างด้านล่าง */
 }
 
+/* ไม่ต้องมีระยะห่างด้านล่างสำหรับรายการสุดท้าย */
 .vision-mission-item:last-child {
     margin-bottom: 0;
 }
 
+/* ตัวอักษรหนาในส่วนวิสัยทัศน์/พันธกิจ */
 .vision-mission-item strong {
-    color: #daa520;
-    font-weight: bold;
+    color: #daa520; /* สีทอง */
+    font-weight: bold; /* ตัวหนา */
 }
 
+/* ย่อหน้าในส่วนวิสัยทัศน์/พันธกิจ */
 .vision-mission-item p {
-    margin-top: 0.25rem;
-    padding-left: 0.5rem;
+    margin-top: 0.25rem; /* ระยะห่างด้านบน */
+    padding-left: 0.5rem; /* ระยะห่างด้านซ้าย */
 }
 
+/* สไตล์ข้อความวิสัยทัศน์และพันธกิจ (จำกัด 2 บรรทัด) */
 .vision-text, .mission-text {
-    overflow: hidden;
-    text-overflow: ellipsis;
+    overflow: hidden; /* ซ่อนส่วนที่เกิน */
+    text-overflow: ellipsis; /* แสดง ... */
     display: -webkit-box;
-    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-line-clamp: 2; /* จำกัดจำนวนบรรทัด */
     -webkit-box-orient: vertical;
 }
 
+/* สไตล์เมื่อขยายข้อความวิสัยทัศน์/พันธกิจ */
 .vision-mission-item.expanded .vision-text,
 .vision-mission-item.expanded .mission-text {
-    -webkit-line-clamp: unset; /* Show all lines when expanded */
-    max-height: none;
+    -webkit-line-clamp: unset; /* ไม่จำกัดบรรทัด */
+    max-height: none; /* ไม่จำกัดความสูง */
 }
 
+/* หัวข้อรอง (H2) ในหน้ารายละเอียด */
 .detail-view h2 {
-    color: #daa520;
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
+    color: #daa520; /* สีทอง */
+    text-align: center; /* จัดกลาง */
+    margin-bottom: 2rem; /* ระยะห่างด้านล่าง */
+    font-size: 2rem; /* ขนาดตัวอักษร */
 }
 
 /* สไตล์ส่วนแสดงผลห้อง */
 .rooms-grid h3 {
-    color: #daa520;
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #ffd700;
-    padding-bottom: 0.5rem;
+    color: #daa520; /* สีทอง */
+    font-size: 1.5rem; /* ขนาดตัวอักษร */
+    margin-top: 2rem; /* ระยะห่างด้านบน */
+    margin-bottom: 1rem; /* ระยะห่างด้านล่าง */
+    border-bottom: 2px solid #ffd700; /* เส้นขีดล่าง */
+    padding-bottom: 0.5rem; /* ระยะห่างภายในด้านล่าง */
 }
 
+/* Grid สำหรับจัดวางการ์ดห้องในแต่ละชั้น */
 .floor-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    display: grid; /* ใช้ CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* กำหนดคอลัมน์แบบยืดหยุ่น */
+    gap: 1.5rem; /* ระยะห่าง */
 }
 
+/* สไตล์ของการ์ดห้อง */
 .room-card {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    border-left: 5px solid #ffd700;
+    background: #ffffff; /* สีพื้นหลัง */
+    border-radius: 10px; /* ขอบมน */
+    padding: 1.5rem; /* ระยะห่างภายใน */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* เงา */
+    border-left: 5px solid #ffd700; /* เส้นขอบซ้าย */
 }
 
+/* หัวข้อ (H4) ในการ์ดห้อง */
 .room-card h4 {
-    color: #5a4e3e;
-    margin-bottom: 0.5rem;
+    color: #5a4e3e; /* สีตัวอักษร */
+    margin-bottom: 0.5rem; /* ระยะห่างด้านล่าง */
 }
 
+/* สไตล์เมื่อไม่มีข้อมูลห้อง */
 .no-room-info {
-    padding: 1.5rem;
-    text-align: center;
-    color: #aaa;
-    background: #ffffff;
-    border-radius: 10px;
-    width: 100%;
+    padding: 1.5rem; /* ระยะห่างภายใน */
+    text-align: center; /* จัดกลาง */
+    color: #aaa; /* สีตัวอักษร */
+    background: #ffffff; /* สีพื้นหลัง */
+    border-radius: 10px; /* ขอบมน */
+    width: 100%; /* ความกว้างเต็ม */
 }
 
 /* ===== ส่วนท้าย (Footer) ===== */
 
 .footer {
-    background: linear-gradient(135deg, #ffd700 0%, #daa520 100%);
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
+    background: linear-gradient(135deg, #ffd700 0%, #daa520 100%); /* ไล่ระดับสีทอง */
+    color: white; /* สีตัวอักษร */
+    text-align: center; /* จัดกลาง */
+    padding: 2rem; /* ระยะห่างภายใน */
+    margin-top: 3rem; /* ระยะห่างด้านบน */
 }
 
 /* ===== Keyframes และ Media Queries ===== */
 
-/* Animation สำหรับ fade-in */
+/* Animation สำหรับ fade-in (ค่อยๆ ปรากฏขึ้น) */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(20px); } /* เริ่มจากโปร่งใสและเลื่อนลง */
+    to { opacity: 1; transform: translateY(0); } /* สิ้นสุดที่ทึบและตำแหน่งปกติ */
 }
 
-/* สไตล์สำหรับหน้าจอขนาดเล็ก (Responsive) */
+/* สไตล์สำหรับหน้าจอขนาดเล็ก (Responsive Design) */
+
+/* เมื่อความกว้างหน้าจอน้อยกว่า 992px */
 @media (max-width: 992px) {
+    /* เปลี่ยนการจัดวางของการ์ดแนะนำเป็นแนวตั้ง */
     .featured-card, .card-content-wrapper {
         flex-direction: column;
     }
 
+    /* ทำให้รูปภาพในการ์ดแนะนำเต็มความกว้าง */
     .card-image {
         width: 100%;
         height: 200px;
     }
 
+    /* เปลี่ยนการจัดวางของ header ในหน้ารายละเอียดเป็นแนวตั้ง */
     .detail-header-card, .detail-header-main {
         flex-direction: column;
     }
 
+    /* ทำให้แผนที่เต็มความกว้าง */
     .detail-map-container {
         width: 100%;
     }
 }
 
+/* เมื่อความกว้างหน้าจอน้อยกว่า 768px */
 @media (max-width: 768px) {
+    /* เปลี่ยนการจัดวางของ header เป็นแนวตั้ง */
     .header {
         flex-direction: column;
         gap: 1rem;
     }
 
+    /* ปรับระยะห่างของ header wrapper */
     .header-wrapper {
         padding: 1rem;
     }
 
+    /* ทำให้ช่องค้นหาเต็มความกว้าง */
     .search-container input {
         width: 100%;
     }
 
+    /* ปรับระยะห่างของการ์ดแนะนำ */
     .featured-card {
         padding: 1rem;
     }
 
+    /* ปรับขนาดตัวอักษรในการ์ดแนะนำ */
     .card-details h1 {
         font-size: 1.5rem;
     }
 
+    /* ปรับระยะห่างของ container หลัก */
     .container {
         padding: 1rem;
         margin: 1rem auto;
     }
 
+    /* ทำให้ grid แสดงผลแค่ 1 คอลัมน์ */
     .buildings-grid {
         grid-template-columns: 1fr;
     }
 
+    /* ปรับการจัดวางและระยะห่างของ header ในหน้ารายละเอียด */
     .detail-header-card {
         flex-direction: column;
         text-align: center;
         padding: 1rem;
     }
 
+    /* ทำให้รูปภาพในหน้ารายละเอียดเต็มความกว้าง */
     .detail-image {
         width: 100%;
         height: 200px;
     }
 
+    /* ทำให้ grid ของห้องแสดงผลแค่ 1 คอลัมน์ */
     .floor-grid {
         grid-template-columns: 1fr;
     }
