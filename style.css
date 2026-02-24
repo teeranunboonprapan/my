@@ -31,35 +31,74 @@ body {
 
 /* กรอบครอบเนื้อหาใน header */
 .header-content-wrapper {
-    background: linear-gradient(135deg, #ffd700 0%, #daa520 100%); /* ไล่ระดับสีทอง */
-    color: #ffffff; /* สีตัวอักษร */
-    padding: 0.5rem 2rem; /* ระยะห่างภายใน */
-    border-radius: 10px; /* ทำให้ขอบมน */
-    box-shadow: 0 4px 20px rgba(218, 165, 32, 0.3); /* เพิ่มเงา */
+    background: linear-gradient(135deg, #ffe234 0%, #f5c000 45%, #daa520 100%);
+    color: #ffffff;
+    padding: 0.55rem 1.8rem 0.55rem 0.9rem;
+    border-radius: 50px;
+    box-shadow:
+        0 6px 24px rgba(218, 165, 32, 0.5),
+        0 2px 6px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-content-wrapper:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 10px 32px rgba(218, 165, 32, 0.6),
+        0 3px 10px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* แสงไหลผ่าน */
+.header-content-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 55%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    animation: badgeShine 4.5s infinite;
+    pointer-events: none;
+}
+
+@keyframes badgeShine {
+    0%   { left: -100%; }
+    40%  { left: 150%; }
+    100% { left: 150%; }
 }
 
 .header-content {
     text-align: left;
+    position: relative;
+    z-index: 1;
 }
 
 /* สไตล์หัวข้อรอง (ชื่อมหาวิทยาลัย) */
 .university-subtitle {
-    display: none; /* ซ่อนหัวข้อรองนี้ไว้ */
+    display: none;
 }
 
 /* สไตล์หัวข้อหลัก (H1) */
 .header h1 {
-    font-size: 1.8rem; /* ขนาดตัวอักษร */
-    margin: 0; /* ไม่มีระยะห่างภายนอก */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* เพิ่มเงาให้ตัวอักษร */
-    display: flex; /* ใช้ Flexbox */
-    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    font-size: 1.7rem;
+    margin: 0;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.08em;
+    font-weight: 700;
 }
 
 /* สไตล์โลโก้ใน header */
 .header-logo {
-    height: 2.2rem; /* ความสูงของโลโก้ */
-    margin-right: 0.75rem; /* ระยะห่างด้านขวา */
+    height: 2.3rem;
+    margin-right: 0.8rem;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.18));
 }
 
 
